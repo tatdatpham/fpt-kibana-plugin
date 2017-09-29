@@ -1,4 +1,4 @@
 {
-  "UI-WELCOME_MESSAGE": "Cargando Kibana",
-  "UI-WELCOME_ERROR": "Kibana no se cargó correctamente. Heck la salida del servidor para obtener más información."
+  "UI-WELCOME_MESSAGE": "FPT SIEM",
+  "UI-WELCOME_ERROR": "FPT SIEM did not load correctly. Heck the server output for more information."
 }
