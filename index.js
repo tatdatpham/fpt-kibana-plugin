@@ -4,12 +4,12 @@ import exampleRoute from './server/routes/example';
 export default function (kibana) {
   return new kibana.Plugin({
     require: ['elasticsearch'],
-    name: 'malice',
+    name: 'fpt-plugin',
     uiExports: {
 
       app: {
-        title: 'Malice',
-        description: 'Malice Kibana Plugin',
+        title: 'FPT SIEM',
+        description: 'FPT Kibana Plugin',
         main: 'plugins/malice/app',
         icon: 'plugins/malice/icon.svg'
       },
@@ -34,7 +34,7 @@ export default function (kibana) {
 
 
     init(server, options) {
-      server.log(['status', 'info', 'malice'], 'Malice Initializing...');
+      server.log(['status', 'info', 'fpt-plugin'], 'FPT plugin Initializing...');
       // Add server routes and initalize the plugin here
       exampleRoute(server);
     }

@@ -29,8 +29,8 @@ uiRoutes
 uiModules
 .get('app/malice', [])
 .controller('maliceHelloWorld', function ($scope, $route, $interval) {
-  $scope.title = 'Malice';
-  $scope.description = 'Malice Kibana Plugin';
+  $scope.title = 'FPT';
+  $scope.description = 'FPT Kibana Plugin';
 
   const currentTime = moment($route.current.locals.currentTime);
   $scope.currentTime = currentTime.format('HH:mm:ss');
