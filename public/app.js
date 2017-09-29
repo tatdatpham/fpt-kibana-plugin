@@ -6,7 +6,7 @@ import 'ui/autoload/styles';
 import './less/main.less';
 import template from './templates/index.html';
 
-document.title = 'Malice - Kibana';
+document.title = 'FPT SIEM';
 
 import chrome from 'ui/chrome';
 
