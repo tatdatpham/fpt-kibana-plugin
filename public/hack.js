@@ -3,7 +3,7 @@ import uiModules from 'ui/modules';
 import './less/hack.less';
 
 import uiChrome from 'ui/chrome';
-import logoUrl from 'plugins/malice/kibana.png';
+import logoUrl from 'plugins/fpt/kibana.png';
 
 uiChrome
 .setBrand({
