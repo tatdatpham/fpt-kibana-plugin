@@ -19,7 +19,7 @@ uiRoutes
   template,
   resolve: {
     currentTime($http) {
-      return $http.get('../api/malice/example').then(function (resp) {
+      return $http.get('../api/fpt/example').then(function (resp) {
         return resp.data.time;
       });
     }
