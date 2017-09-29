@@ -1,0 +1,10 @@
+{
+  "es": {
+    "timefield": "scan_date",
+    "default_index": "malice"
+  },
+  "default_rows": 2,
+  "default_columns": 2,
+  "max_buckets": 2000,
+  "target_buckets": 200
+}

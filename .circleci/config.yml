@@ -1,0 +1,33 @@
+version: 2
+jobs:
+  build:
+    working_directory: /app
+    docker:
+      - image: docker:17.06.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --no-cache curl jq
+      - run:
+          name: Run image tests
+          no_output_timeout: 1m
+          command: |
+            set -x
+            docker create -v /plugin/malice --name kvol alpine:3.6 /bin/true
+            docker cp . kvol:/plugin/malice
+            docker run --init -d --name kplug --volumes-from kvol -p 9200:9200 -p 5601:5601 blacktop/kibana-plugin-builder elasticsearch
+            docker exec -it -u root kplug bash -c "cd ../malice && npm install"
+            docker exec -it kplug bash -c "cd ../malice/data && ./load-data.sh"
+            docker exec -it kplug bash -c "cd ../malice && npm run test:browser --force"
+      # - deploy:
+      #     name: Push application Docker image
+      #     command: |
+      #       if [ "${CIRCLE_BRANCH}" == "master" ]; then
+      #         login="$(aws ecr get-login)"
+      #         ${login}
+      #         docker tag app "${ECR_ENDPOINT}/app:${CIRCLE_SHA1}"
+      #         docker push "${ECR_ENDPOINT}/app:${CIRCLE_SHA1}"
+      #       fi
