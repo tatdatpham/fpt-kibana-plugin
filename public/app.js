@@ -27,7 +27,7 @@ uiRoutes
 });
 
 uiModules
-.get('app/malice', [])
+.get('app/fpt', [])
 .controller('maliceHelloWorld', function ($scope, $route, $interval) {
   $scope.title = 'FPT';
   $scope.description = 'FPT Kibana Plugin';
