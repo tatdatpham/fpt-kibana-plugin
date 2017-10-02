@@ -5,7 +5,7 @@ malice-kibana-plugin
 
 > Malice Kibana Plugin
 
-![screen-shot](https://raw.githubusercontent.com/maliceio/malice-kibana-plugin/master/docs/screen-shot.png)
+![screen-shot](https://raw.githubusercontent.com/tatdatpham/fpt-kibana-plugin/master/docs/screen-shot.png)
 
 ---
 
